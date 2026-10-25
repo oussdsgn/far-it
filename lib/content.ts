@@ -242,8 +242,8 @@ const fr = {
     teamRoles: ["Président & Associé Fondateur", "Directeur Général & Associé"],
     info: "Informations",
     infoLinks: [
-      { label: "Mentions légales", href: "#" },
-      { label: "Confidentialité", href: "#" },
+      { label: "Mentions légales", href: "/mentions-legales" },
+      { label: "Confidentialité", href: "/politique-de-confidentialite" },
       { label: "Notre offre", href: "/#offre" },
       { label: "Méthodologie", href: "/#approche" },
     ],
@@ -494,8 +494,8 @@ const en: Dictionary = {
     teamRoles: ["President & Founding Partner", "Managing Director & Partner"],
     info: "Information",
     infoLinks: [
-      { label: "Legal notice", href: "#" },
-      { label: "Privacy", href: "#" },
+      { label: "Legal notice", href: "/mentions-legales" },
+      { label: "Privacy", href: "/politique-de-confidentialite" },
       { label: "Our offer", href: "/#offre" },
       { label: "Methodology", href: "/#approche" },
     ],
