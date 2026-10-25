@@ -47,7 +47,7 @@ export default function Why() {
             </div>
           </div>
           <div className="lg:col-span-2 lg:flex lg:justify-end">
-            <Button href="#contact" variant="ink" className="w-full lg:w-auto">
+            <Button href="/contact" variant="ink" className="w-full lg:w-auto">
               {w.cta}
             </Button>
           </div>

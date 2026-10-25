@@ -31,7 +31,7 @@ export default function Numbers() {
             </Reveal>
           ))}
           <Reveal delay={0.3} className="col-span-2 lg:col-span-1 lg:col-start-1 lg:row-start-1 lg:pr-8">
-            <a href="#contact" className="group relative block aspect-[16/9] overflow-hidden lg:aspect-[4/3]">
+            <a href="/contact" className="group relative block aspect-[16/9] overflow-hidden lg:aspect-[4/3]">
               <Image src="/images/hero.jpg" alt="" fill sizes="(min-width:1024px) 256px, 100vw" className="object-cover object-[50%_25%] transition-transform duration-700 group-hover:scale-105" />
               <div className="absolute inset-0 bg-gradient-to-t from-ink via-ink/20 to-transparent" />
               <div className="absolute inset-x-0 bottom-0 flex items-center gap-3 p-3">

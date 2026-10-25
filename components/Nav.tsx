@@ -1,6 +1,7 @@
 "use client";
 
 import Image from "next/image";
+import Link from "next/link";
 import { AnimatePresence, motion } from "motion/react";
 import { Mail, MapPin, Phone } from "lucide-react";
 import { useEffect, useState } from "react";
@@ -61,21 +62,21 @@ export default function Nav() {
         }`}
       >
         <div className="shell flex h-[70px] items-center justify-between gap-4">
-          <a href="#top" className="flex items-center gap-4" aria-label="FAR-IT">
+          <Link href="/" className="flex items-center gap-4" aria-label="FAR-IT">
             <Image src="/images/logo-white.png" alt="FAR-IT" width={1051} height={408} priority className="h-8 w-auto" />
             <span className="hidden border border-white/10 bg-white/5 px-2.5 py-1 text-[11px] font-medium text-white/70 md:inline">
               {t.nav.tagline}
             </span>
-          </a>
+          </Link>
 
           <div className="flex items-center gap-3 sm:gap-5">
             <LangToggle />
-            <a
-              href="#contact"
+            <Link
+              href="/contact"
               className="hidden bg-lime px-4 py-2.5 text-sm font-semibold text-ink transition-colors hover:bg-lime-soft sm:inline-block"
             >
               {t.nav.cta}
-            </a>
+            </Link>
             <button
               type="button"
               onClick={() => setOpen((o) => !o)}
@@ -119,14 +120,14 @@ export default function Nav() {
                     transition={{ delay: 0.25 + i * 0.05, duration: 0.6, ease: [0.22, 1, 0.36, 1] }}
                     className="border-b border-white/[0.08]"
                   >
-                    <a
+                    <Link
                       href={l.href}
                       onClick={() => setOpen(false)}
                       className="group flex items-baseline gap-5 py-3 font-display text-4xl font-medium tracking-[-0.04em] text-white/80 transition-colors hover:text-white sm:text-5xl"
                     >
                       <span className="w-8 font-sans text-sm tracking-normal text-lime">0{i + 1}</span>
                       <span className="transition-transform duration-500 group-hover:translate-x-3">{l.label}</span>
-                    </a>
+                    </Link>
                   </motion.li>
                 ))}
               </ul>

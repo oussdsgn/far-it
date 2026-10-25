@@ -1,6 +1,7 @@
 "use client";
 
 import Image from "next/image";
+import Link from "next/link";
 import { ChevronUp, Clock, Mail, MapPin } from "lucide-react";
 import { useI18n } from "@/lib/i18n";
 import { site } from "@/lib/content";
@@ -65,9 +66,9 @@ export default function Footer() {
             <ul className="space-y-2.5 text-sm text-white/80">
               {f.infoLinks.map((l) => (
                 <li key={l.label}>
-                  <a href={l.href} className="hover:text-lime">
+                  <Link href={l.href} className="hover:text-lime">
                     {l.label}
-                  </a>
+                  </Link>
                 </li>
               ))}
             </ul>
@@ -75,7 +76,7 @@ export default function Footer() {
 
           <div className="flex flex-col items-start justify-between gap-6 lg:items-end">
             <LangToggle id="footer" />
-            <a href="#top" aria-label={f.top} className="grid size-11 place-items-center bg-lime text-ink transition-transform hover:-translate-y-1">
+            <a href="#" aria-label={f.top} className="grid size-11 place-items-center bg-lime text-ink transition-transform hover:-translate-y-1">
               <ChevronUp className="size-5" />
             </a>
           </div>

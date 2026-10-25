@@ -2,6 +2,7 @@
 
 import { motion, useInView, useMotionValue, animate } from "motion/react";
 import { ArrowRight } from "lucide-react";
+import Link from "next/link";
 import { useEffect, useRef, useState } from "react";
 
 type Tone = "dark" | "light";
@@ -66,17 +67,25 @@ export function Button({ href, children, variant = "lime", className = "", exter
     ink: "bg-ink text-white outline-ink [&_.arr]:bg-white [&_.arr]:text-ink",
     light: "bg-white text-ink outline-white [&_.arr]:bg-ink [&_.arr]:text-white",
   }[variant];
-  return (
-    <a
-      href={href}
-      {...(external ? { target: "_blank", rel: "noreferrer" } : {})}
-      className={`group inline-flex min-w-[15rem] items-center justify-between gap-6 py-1 pr-1 pl-3 text-[15px] font-medium outline-2 -outline-offset-2 transition-colors ${styles} ${className}`}
-    >
+  const cls = `group inline-flex min-w-[15rem] items-center justify-between gap-6 py-1 pr-1 pl-3 text-[15px] font-medium outline-2 -outline-offset-2 transition-colors ${styles} ${className}`;
+  const inner = (
+    <>
       <span>{children}</span>
       <span className="arr grid size-9 shrink-0 place-items-center overflow-hidden">
         <ArrowRight className="size-[18px] transition-transform duration-300 group-hover:translate-x-0.5" />
       </span>
-    </a>
+    </>
+  );
+  if (external)
+    return (
+      <a href={href} target="_blank" rel="noreferrer" className={cls}>
+        {inner}
+      </a>
+    );
+  return (
+    <Link href={href} className={cls}>
+      {inner}
+    </Link>
   );
 }
 

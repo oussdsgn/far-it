@@ -20,7 +20,6 @@ export function LanguageProvider({ children }: { children: React.ReactNode }) {
 
   useEffect(() => {
     document.documentElement.lang = locale;
-    document.title = dictionaries[locale].meta.title;
   }, [locale]);
 
   const setLocale = useCallback((l: Locale) => {
@@ -43,4 +42,13 @@ export function useI18n() {
   const ctx = useContext(I18nContext);
   if (!ctx) throw new Error("useI18n must be used inside <LanguageProvider>");
   return ctx;
+}
+
+/** Keeps the tab title in the active language for the given page. */
+export function DocumentTitle({ page }: { page: "home" | "contact" }) {
+  const { t } = useI18n();
+  useEffect(() => {
+    document.title = page === "contact" ? t.contact.metaTitle : t.meta.title;
+  }, [page, t]);
+  return null;
 }

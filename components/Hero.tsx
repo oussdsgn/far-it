@@ -68,7 +68,7 @@ export default function Hero() {
             transition={{ delay: 0.65, duration: 0.8, ease }}
             className="mt-8 flex flex-wrap items-center gap-x-8 gap-y-4"
           >
-            <Button href="#contact">{t.hero.ctaPrimary}</Button>
+            <Button href="/contact">{t.hero.ctaPrimary}</Button>
             <a href="#approche" className="group inline-flex items-center gap-2 text-[15px] font-medium text-white/80 hover:text-white">
               <Compass className="size-4 text-lime" />
               <span className="border-b border-white/30 pb-0.5 transition-colors group-hover:border-lime">{t.hero.ctaSecondary}</span>

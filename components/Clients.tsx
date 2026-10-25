@@ -37,7 +37,7 @@ export default function Clients() {
             </Reveal>
           </div>
           <Reveal delay={0.2} className="lg:col-span-2 lg:flex lg:items-end lg:justify-end">
-            <Button href="#contact" className="w-full lg:w-auto">
+            <Button href="/contact" className="w-full lg:w-auto">
               {t.nav.cta}
             </Button>
           </Reveal>

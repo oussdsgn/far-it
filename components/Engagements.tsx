@@ -97,7 +97,7 @@ export default function Engagements() {
                             <Icon className="size-6" />
                           </span>
                           <p className="relative max-w-xl text-lg leading-relaxed text-white/90">{item.body}</p>
-                          <a href="#contact" className="relative mt-6 w-fit border-b border-white/30 pb-0.5 text-sm text-white/70 transition-colors hover:border-lime hover:text-white">
+                          <a href="/contact" className="relative mt-6 w-fit border-b border-white/30 pb-0.5 text-sm text-white/70 transition-colors hover:border-lime hover:text-white">
                             {item.tag} →
                           </a>
                         </div>

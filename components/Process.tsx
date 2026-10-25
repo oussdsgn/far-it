@@ -26,7 +26,7 @@ export default function Process() {
             </Reveal>
           </div>
           <Reveal delay={0.2} className="lg:col-span-2 lg:flex lg:items-end lg:justify-end">
-            <Button href="#contact" variant="ink" className="w-full lg:w-auto">
+            <Button href="/contact" variant="ink" className="w-full lg:w-auto">
               {p.cta}
             </Button>
           </Reveal>
@@ -68,7 +68,7 @@ export default function Process() {
                   <h3 className="font-display text-3xl font-medium tracking-[-0.035em]">{s.title}.</h3>
                   <p className="mt-4 max-w-md text-[15px] leading-relaxed text-stone">{s.body}</p>
                 </div>
-                <Button href="#contact" variant="ink" className="mt-8 w-fit">
+                <Button href="/contact" variant="ink" className="mt-8 w-fit">
                   {p.cta}
                 </Button>
               </Reveal>

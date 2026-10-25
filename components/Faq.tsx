@@ -33,7 +33,7 @@ export default function Faq() {
             </Reveal>
           </div>
           <Reveal delay={0.2} className="lg:col-span-2 lg:flex lg:items-end lg:justify-end">
-            <Button href="#contact" variant="ink" className="w-full lg:w-auto">
+            <Button href="/contact" variant="ink" className="w-full lg:w-auto">
               {f.cta}
             </Button>
           </Reveal>

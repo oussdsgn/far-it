@@ -27,7 +27,7 @@ function CircleBadge({ text }: { text: string }) {
   );
 }
 
-export default function Contact() {
+export default function Contact({ standalone = false }: { standalone?: boolean }) {
   const { t, locale } = useI18n();
   const c = t.contact;
   const [status, setStatus] = useState<Status>("idle");
@@ -55,12 +55,13 @@ export default function Contact() {
     }
   }
 
+  const Heading = standalone ? "h1" : "h2";
   const field =
     "mt-2 w-full border border-transparent bg-paper px-4 py-3 text-[15px] text-ink placeholder:text-black/35 outline-none transition-colors focus:border-ink focus:bg-white";
   const f = c.fields;
 
   return (
-    <section id="contact" className="grain relative scroll-mt-[70px] overflow-hidden bg-ink">
+    <section id="contact" className={`grain relative scroll-mt-[70px] overflow-hidden bg-ink ${standalone ? "min-h-screen pt-[70px]" : ""}`}>
       <GridLines />
       <Rays className="pointer-events-none absolute -right-20 top-24 w-[460px] -scale-x-100 text-white/[0.035]" />
       <div className="shell pt-24 lg:pt-32">
@@ -69,9 +70,9 @@ export default function Contact() {
             <Label>{c.label}</Label>
           </div>
           <div className="lg:col-span-3">
-            <h2 className="h-display text-5xl sm:text-6xl lg:text-[4.2rem]" key={locale}>
+            <Heading className="h-display text-5xl sm:text-6xl lg:text-[4.2rem]" key={locale}>
               <SplitWords text={c.title} />
-            </h2>
+            </Heading>
             <Reveal delay={0.1}>
               <p className="mt-6 max-w-lg text-[17px] leading-relaxed text-white/75">{c.sub}</p>
             </Reveal>
