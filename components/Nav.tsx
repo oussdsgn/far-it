@@ -62,11 +62,8 @@ export default function Nav() {
         }`}
       >
         <div className="shell flex h-[70px] items-center justify-between gap-4">
-          <Link href="/" className="flex items-center gap-4" aria-label="FAR-IT">
+          <Link href="/" aria-label="FAR-IT">
             <Image src="/images/logo-white.png" alt="FAR-IT" width={1051} height={408} priority className="h-8 w-auto" />
-            <span className="hidden border border-white/10 bg-white/5 px-2.5 py-1 text-[11px] font-medium text-white/70 md:inline">
-              {t.nav.tagline}
-            </span>
           </Link>
 
           <div className="flex items-center gap-3 sm:gap-5">

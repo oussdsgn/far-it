@@ -10,7 +10,6 @@ const fr = {
       "Cabinet d'approche directe et de recrutement d'élite dédié aux métiers des technologies, du digital et de la data. Pas d'acompte, pas d'exclusivité.",
   },
   nav: {
-    tagline: "Cabinet de recrutement IT",
     links: [
       { label: "Accueil", href: "/" },
       { label: "Notre Approche", href: "/#approche" },
@@ -263,7 +262,6 @@ const en: Dictionary = {
       "Direct-search and elite recruitment firm dedicated to technology, digital and data roles. No retainer, no exclusivity.",
   },
   nav: {
-    tagline: "IT recruitment firm",
     links: [
       { label: "Home", href: "/" },
       { label: "Our Approach", href: "/#approche" },
