@@ -1,0 +1,72 @@
+@import "tailwindcss";
+
+@theme {
+  /* Surfaces — Clonix-style near-black green + light paper */
+  --color-ink: #0d1915;
+  --color-ink-2: #12211c;
+  --color-ink-3: #1a2c26;
+  --color-paper: #efefec;
+  --color-paper-2: #e6e6e2;
+
+  /* Brand — sampled from the FAR-IT logo */
+  --color-lime: #e4dc2a;
+  --color-lime-soft: #f0eb7a;
+  --color-brand: #07714b;
+  --color-brand-bright: #12a06b;
+
+  --color-fog: #8e9a95;
+  --color-stone: #5d6662;
+
+  --font-display: var(--font-inter-tight), ui-sans-serif, system-ui, sans-serif;
+  --font-sans: var(--font-inter), ui-sans-serif, system-ui, sans-serif;
+  --font-serif: var(--font-instrument), ui-serif, Georgia, serif;
+
+  --animate-marquee: marquee 40s linear infinite;
+  --animate-spin-slow: spin 18s linear infinite;
+
+  @keyframes marquee {
+    from { transform: translateX(0); }
+    to { transform: translateX(-50%); }
+  }
+}
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+    -webkit-font-smoothing: antialiased;
+  }
+  body {
+    @apply bg-ink font-sans text-white;
+  }
+  ::selection {
+    @apply bg-lime text-ink;
+  }
+  :focus-visible {
+    @apply outline-2 outline-offset-2 outline-lime;
+  }
+}
+
+@layer components {
+  /* 5-column Clonix grid: label column + 4 content columns */
+  .shell {
+    @apply relative mx-auto w-full max-w-[1280px] px-4 sm:px-6 lg:px-10 xl:px-0;
+  }
+  .h-display {
+    @apply font-display font-medium tracking-[-0.045em] leading-[0.98];
+  }
+  .h-section {
+    @apply font-display text-[2.5rem] font-medium leading-[1.02] tracking-[-0.04em] sm:text-5xl lg:text-[3.6rem];
+  }
+  .grain {
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='160' height='160'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.9' numOctaves='2' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='.05'/%3E%3C/svg%3E");
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
+  *, *::before, *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+}
