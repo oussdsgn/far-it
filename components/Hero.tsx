@@ -2,7 +2,7 @@
 
 import Image from "next/image";
 import { motion } from "motion/react";
-import { Compass, Zap } from "lucide-react";
+import { Compass } from "lucide-react";
 import { useI18n } from "@/lib/i18n";
 import { site } from "@/lib/content";
 import { Button, GridLines, Label, Rule, SplitWords } from "./ui";
@@ -38,7 +38,7 @@ export default function Hero() {
           <Label>{t.hero.label}</Label>
         </motion.div>
 
-        <div className="lg:col-span-3 lg:pr-12" key={locale}>
+        <div className="lg:col-span-4" key={locale}>
           <h1 className="h-display text-[2.6rem] sm:text-6xl lg:text-[4.1rem] xl:text-[4.5rem]">
             <SplitWords text={t.hero.titleBefore} />{" "}
             <span className="relative inline-block text-lime">
@@ -100,47 +100,10 @@ export default function Hero() {
           </motion.div>
         </div>
 
-        <motion.aside
-          initial={{ opacity: 0, y: 30 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ delay: 0.4, duration: 1, ease }}
-          className="flex flex-col gap-10 sm:flex-row lg:flex-col"
-        >
-          <div className="flex items-center justify-center gap-2 text-white/70 sm:w-1/2 lg:w-auto">
-            <Laurel />
-            <div className="text-center">
-              <p className="font-display text-4xl font-semibold tracking-tight text-white">{t.hero.badgeTop}</p>
-              <p className="mt-1 text-[10px] font-semibold tracking-[0.18em] uppercase">{t.hero.badgeBottom}</p>
-            </div>
-            <Laurel flip />
-          </div>
-
-          <a href="#approche" className="group block sm:w-1/2 lg:w-auto">
-            <p className="mb-3 flex items-center gap-1.5 text-[15px] font-medium">
-              <Zap className="size-4 fill-lime text-lime" /> {t.hero.featured}
-            </p>
-            <div className="relative aspect-[4/5] overflow-hidden">
-              <Image
-                src="/images/hero.jpg"
-                alt=""
-                fill
-                priority
-                sizes="(min-width: 1024px) 256px, 50vw"
-                className="object-cover transition-transform duration-700 group-hover:scale-105"
-              />
-              <div className="absolute inset-x-0 bottom-0 bg-gradient-to-t from-ink/90 to-transparent p-3 pt-10">
-                <span className="inline-flex items-center gap-1.5 bg-white/10 px-2 py-1 text-[11px] font-medium backdrop-blur">
-                  <span className="size-1.5 animate-pulse rounded-full bg-lime" /> Live Search
-                </span>
-              </div>
-            </div>
-            <p className="mt-3 text-[15px] leading-snug text-white/60 transition-colors group-hover:text-white">{t.hero.featuredCaption}</p>
-          </a>
-        </motion.aside>
       </div>
 
       <div className="shell grid pb-14 lg:grid-cols-5">
-        <div className="min-w-0 lg:col-span-3 lg:col-start-2 lg:pr-12">
+        <div className="min-w-0 lg:col-span-4 lg:col-start-2">
           <p className="mb-5 text-sm text-white/50">{t.hero.trusted}</p>
           <div className="relative overflow-hidden [mask-image:linear-gradient(90deg,transparent,#000_12%,#000_88%,transparent)]">
             <div className="flex w-max animate-marquee items-center gap-14">
@@ -162,13 +125,3 @@ export default function Hero() {
   );
 }
 
-function Laurel({ flip }: { flip?: boolean }) {
-  return (
-    <svg viewBox="0 0 32 64" className={`h-16 w-8 ${flip ? "-scale-x-100" : ""}`} fill="currentColor" aria-hidden>
-      {[8, 18, 28, 38, 48].map((y, i) => (
-        <ellipse key={y} cx={14 + i * 1.2} cy={y} rx="3.2" ry="6.5" transform={`rotate(${-35 + i * 6} ${14 + i * 1.2} ${y})`} />
-      ))}
-      <path d="M22 4 C 10 20, 10 44, 24 62" stroke="currentColor" strokeWidth="1.5" fill="none" />
-    </svg>
-  );
-}
